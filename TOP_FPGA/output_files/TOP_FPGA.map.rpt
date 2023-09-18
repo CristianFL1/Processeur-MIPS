@@ -1,0 +1,1325 @@
+Analysis & Synthesis report for TOP_FPGA
+Wed Jul 26 14:41:34 2023
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: TOP:DUT|MIPS:MIPS|datapath:datapath|ual:ALU
+ 13. Port Connectivity Checks: "TOP:DUT|MIPS:MIPS|datapath:datapath|ual:ALU"
+ 14. Port Connectivity Checks: "TOP:DUT"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Jul 26 14:41:34 2023       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; TOP_FPGA                                    ;
+; Top-level Entity Name              ; top_fpga                                    ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 7,601                                       ;
+;     Total combinational functions  ; 3,409                                       ;
+;     Dedicated logic registers      ; 4,264                                       ;
+; Total registers                    ; 4264                                        ;
+; Total pins                         ; 44                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C6GES   ;                    ;
+; Top-level entity name                                            ; top_fpga           ; TOP_FPGA           ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
+;     Processor 5            ;   0.1%      ;
+;     Processor 6            ;   0.1%      ;
+;     Processor 7            ;   0.1%      ;
+;     Processor 8            ;   0.1%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                      ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
+; ../Fichiers_VHDL/ual.vhd         ; yes             ; User VHDL File  ; H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/ual.vhd        ;         ;
+; ../Fichiers_VHDL/top_fpga.vhd    ; yes             ; User VHDL File  ; H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/top_fpga.vhd   ;         ;
+; ../Fichiers_VHDL/TOP.vhd         ; yes             ; User VHDL File  ; H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/TOP.vhd        ;         ;
+; ../Fichiers_VHDL/regfile.vhd     ; yes             ; User VHDL File  ; H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/regfile.vhd    ;         ;
+; ../Fichiers_VHDL/MIPS.vhd        ; yes             ; User VHDL File  ; H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/MIPS.vhd       ;         ;
+; ../Fichiers_VHDL/imem.vhd        ; yes             ; User VHDL File  ; H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/imem.vhd       ;         ;
+; ../Fichiers_VHDL/dmem.vhd        ; yes             ; User VHDL File  ; H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/dmem.vhd       ;         ;
+; ../Fichiers_VHDL/dec7seg.vhd     ; yes             ; User VHDL File  ; H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/dec7seg.vhd    ;         ;
+; ../Fichiers_VHDL/datapath.vhd    ; yes             ; User VHDL File  ; H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/datapath.vhd   ;         ;
+; ../Fichiers_VHDL/controller.vhd  ; yes             ; User VHDL File  ; H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/controller.vhd ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 7,601        ;
+;                                             ;              ;
+; Total combinational functions               ; 3409         ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 3193         ;
+;     -- 3 input functions                    ; 189          ;
+;     -- <=2 input functions                  ; 27           ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 3363         ;
+;     -- arithmetic mode                      ; 46           ;
+;                                             ;              ;
+; Total registers                             ; 4264         ;
+;     -- Dedicated logic registers            ; 4264         ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 44           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[1]~input ;
+; Maximum fan-out                             ; 4264         ;
+; Total fan-out                               ; 26282        ;
+; Average fan-out                             ; 3.39         ;
++---------------------------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                 ;
++----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                            ; Entity Name ; Library Name ;
++----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------+-------------+--------------+
+; |top_fpga                        ; 3409 (0)            ; 4264 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 44   ; 0            ; 0          ; |top_fpga                                                      ; top_fpga    ; work         ;
+;    |TOP:DUT|                     ; 3367 (0)            ; 4264 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|TOP:DUT                                              ; TOP         ; work         ;
+;       |MIPS:MIPS|                ; 476 (0)             ; 168 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|TOP:DUT|MIPS:MIPS                                    ; MIPS        ; work         ;
+;          |controller:controller| ; 25 (25)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|TOP:DUT|MIPS:MIPS|controller:controller              ; controller  ; work         ;
+;          |datapath:datapath|     ; 451 (92)            ; 168 (8)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|TOP:DUT|MIPS:MIPS|datapath:datapath                  ; datapath    ; work         ;
+;             |RegFile:registre|   ; 272 (272)           ; 160 (160)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre ; RegFile     ; work         ;
+;             |ual:ALU|            ; 87 (87)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|TOP:DUT|MIPS:MIPS|datapath:datapath|ual:ALU          ; ual         ; work         ;
+;       |dmem:dmem|                ; 2860 (2860)         ; 4096 (4096)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|TOP:DUT|dmem:dmem                                    ; dmem        ; work         ;
+;       |imem:imem|                ; 31 (31)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|TOP:DUT|imem:imem                                    ; imem        ; work         ;
+;    |dec7seg:dec7seg_0|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|dec7seg:dec7seg_0                                    ; dec7seg     ; work         ;
+;    |dec7seg:dec7seg_1|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|dec7seg:dec7seg_1                                    ; dec7seg     ; work         ;
+;    |dec7seg:dec7seg_4|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|dec7seg:dec7seg_4                                    ; dec7seg     ; work         ;
+;    |dec7seg:dec7seg_5|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|dec7seg:dec7seg_5                                    ; dec7seg     ; work         ;
+;    |dec7seg:dec7seg_6|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|dec7seg:dec7seg_6                                    ; dec7seg     ; work         ;
+;    |dec7seg:dec7seg_7|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|dec7seg:dec7seg_7                                    ; dec7seg     ; work         ;
++----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                        ;
++---------------------------------------------------------------+-----------------------------------------------------------+
+; Register name                                                 ; Reason for Removal                                        ;
++---------------------------------------------------------------+-----------------------------------------------------------+
+; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[1]                 ; Merged with TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[0] ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[0]                 ; Stuck at GND due to stuck port data_in                    ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~294  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~295  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~296  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~297  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~298  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~299  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~300  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~301  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~302  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~303  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~304  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~305  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~306  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~307  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~308  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~309  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~310  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~311  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~312  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~313  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~314  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~315  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~316  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~317  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~318  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~319  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~320  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~321  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~322  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~323  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~324  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~325  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~326  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~327  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~328  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~329  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~330  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~331  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~332  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~333  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~334  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~335  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~336  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~337  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~338  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~339  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~340  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~341  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~342  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~343  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~344  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~345  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~346  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~347  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~348  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~349  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~350  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~351  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~352  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~353  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~354  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~355  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~356  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~357  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~358  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~359  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~360  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~361  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~362  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~363  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~364  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~365  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~366  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~367  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~368  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~369  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~370  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~371  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~372  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~373  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~374  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~375  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~376  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~377  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~378  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~379  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~380  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~381  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~382  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~383  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~384  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~385  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~386  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~387  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~388  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~389  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~390  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~391  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~392  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~393  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~394  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~395  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~396  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~397  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~398  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~399  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~400  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~401  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~402  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~403  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~404  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~405  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~406  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~407  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~408  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~409  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~410  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~411  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~412  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~413  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~414  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~415  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~416  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~417  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~418  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~419  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~420  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~421  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~422  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~423  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~424  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~425  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~426  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~427  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~428  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~429  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~430  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~431  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~432  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~433  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~434  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~435  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~436  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~437  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~438  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~439  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~440  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~441  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~442  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~443  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~444  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~445  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~446  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~447  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~448  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~449  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~450  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~451  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~452  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~453  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~454  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~455  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~456  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~457  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~458  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~459  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~460  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~461  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~462  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~463  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~464  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~465  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~466  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~467  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~468  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~469  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~470  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~471  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~472  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~473  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~474  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~475  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~476  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~477  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~478  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~479  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~480  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~481  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~482  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~483  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~484  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~485  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~486  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~487  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~488  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~489  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~490  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~491  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~492  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~493  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~494  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~495  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~496  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~497  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~498  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~499  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~500  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~501  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~502  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~503  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~504  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~505  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~506  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~507  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~508  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~509  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~510  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~511  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~512  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~513  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~514  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~515  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~516  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~517  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~518  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~519  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~520  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~521  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~522  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~523  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~524  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~525  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~526  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~527  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~528  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~529  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~530  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~531  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~532  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~533  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~534  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~535  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~536  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~537  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~538  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~539  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~540  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~541  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~542  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~543  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~544  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~545  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~546  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~547  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~548  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~549  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~550  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~551  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~552  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~553  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~554  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~555  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~556  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~557  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~558  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~559  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~560  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~561  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~562  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~563  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~564  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~565  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~566  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~567  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~568  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~569  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~570  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~571  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~572  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~573  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~574  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~575  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~576  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~577  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~578  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~579  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~580  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~581  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~582  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~583  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~584  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~585  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~586  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~587  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~588  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~589  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~590  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~591  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~592  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~593  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~594  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~595  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~596  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~597  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~598  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~599  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~600  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~601  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~602  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~603  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~604  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~605  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~606  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~607  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~608  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~609  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~610  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~611  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~612  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~613  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~614  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~615  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~616  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~617  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~618  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~619  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~620  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~621  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~622  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~623  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~624  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~625  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~626  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~627  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~628  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~629  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~630  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~631  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~632  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~633  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~634  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~635  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~636  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~637  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~638  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~639  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~640  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~641  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~642  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~643  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~644  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~645  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~646  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~647  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~648  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~649  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~650  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~651  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~652  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~653  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~654  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~655  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~656  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~657  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~658  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~659  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~660  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~661  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~662  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~663  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~664  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~665  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~666  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~667  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~668  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~669  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~670  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~671  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~672  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~673  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~674  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~675  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~676  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~677  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~678  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~679  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~680  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~681  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~682  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~683  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~684  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~685  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~686  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~687  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~688  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~689  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~690  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~691  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~692  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~693  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~694  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~695  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~696  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~697  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~698  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~699  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~700  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~701  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~702  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~703  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~704  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~705  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~706  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~707  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~708  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~709  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~710  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~711  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~712  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~713  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~714  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~715  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~716  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~717  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~718  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~719  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~720  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~721  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~722  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~723  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~724  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~725  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~726  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~727  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~728  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~729  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~730  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~731  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~732  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~733  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~734  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~735  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~736  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~737  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~738  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~739  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~740  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~741  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~742  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~743  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~744  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~745  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~746  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~747  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~748  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~749  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~750  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~751  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~752  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~753  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~754  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~755  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~756  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~757  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~758  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~759  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~760  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~761  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~762  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~763  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~764  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~765  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~766  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~767  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~768  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~769  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~770  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~771  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~772  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~773  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~774  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~775  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~776  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~777  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~778  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~779  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~780  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~781  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~782  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~783  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~784  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~785  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~786  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~787  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~788  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~789  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~790  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~791  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~792  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~793  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~794  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~795  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~796  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~797  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~798  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~799  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~800  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~801  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~802  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~803  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~804  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~805  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~806  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~807  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~808  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~809  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~810  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~811  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~812  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~813  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~814  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~815  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~816  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~817  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~818  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~819  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~820  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~821  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~822  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~823  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~824  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~825  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~826  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~827  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~828  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~829  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~830  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~831  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~832  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~833  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~834  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~835  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~836  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~837  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~838  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~839  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~840  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~841  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~842  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~843  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~844  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~845  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~846  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~847  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~848  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~849  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~850  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~851  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~852  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~853  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~854  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~855  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~856  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~857  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~858  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~859  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~860  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~861  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~862  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~863  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~864  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~865  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~866  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~867  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~868  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~869  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~870  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~871  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~872  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~873  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~874  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~875  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~876  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~877  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~878  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~879  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~880  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~881  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~882  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~883  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~884  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~885  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~886  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~887  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~888  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~889  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~890  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~891  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~892  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~893  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~894  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~895  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~896  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~897  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~898  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~899  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~900  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~901  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~902  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~903  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~904  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~905  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~906  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~907  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~908  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~909  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~910  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~911  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~912  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~913  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~914  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~915  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~916  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~917  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~918  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~919  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~920  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~921  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~922  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~923  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~924  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~925  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~926  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~927  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~928  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~929  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~930  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~931  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~932  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~933  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~934  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~935  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~936  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~937  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~938  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~939  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~940  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~941  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~942  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~943  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~944  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~945  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~946  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~947  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~948  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~949  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~950  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~951  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~952  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~953  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~954  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~955  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~956  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~957  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~958  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~959  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~960  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~961  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~962  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~963  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~964  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~965  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~966  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~967  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~968  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~969  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~970  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~971  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~972  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~973  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~974  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~975  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~976  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~977  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~978  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~979  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~980  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~981  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~982  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~983  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~984  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~985  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~986  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~987  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~988  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~989  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~990  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~991  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~992  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~993  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~994  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~995  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~996  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~997  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~998  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~999  ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1000 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1001 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1002 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1003 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1004 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1005 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1006 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1007 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1008 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1009 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1010 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1011 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1012 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1013 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1014 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1015 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1016 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1017 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1018 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1019 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1020 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1021 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1022 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1023 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1024 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1025 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1026 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1027 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1028 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1029 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1030 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1031 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1032 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1033 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1034 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1035 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1036 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1037 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1038 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1039 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1040 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1041 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1042 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1043 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1044 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1045 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1046 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1047 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1048 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1049 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1050 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1051 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1052 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1053 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1054 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1055 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1056 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1057 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1058 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1059 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1060 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~1061 ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[10..31]            ; Lost fanout                                               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~230  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~261  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~260  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~259  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~258  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~257  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~256  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~255  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~254  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~253  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~252  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~251  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~250  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~249  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~248  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~247  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~246  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~245  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~244  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~243  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~242  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~241  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~240  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~239  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~238  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~237  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~236  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~235  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~234  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~233  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~232  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~231  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~70   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~101  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~100  ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~99   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~98   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~97   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~96   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~95   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~94   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~93   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~92   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~91   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~90   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~89   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~88   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~87   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~86   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~85   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~84   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~83   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~82   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~81   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~80   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~79   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~78   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~77   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~76   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~75   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~74   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~73   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~72   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~71   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~38   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~69   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~68   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~67   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~66   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~65   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~64   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~63   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~62   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~61   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~60   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~59   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~58   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~57   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~56   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~55   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~54   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~53   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~52   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~51   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~50   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~49   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~48   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~47   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~46   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~45   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~44   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~43   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~42   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~41   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~40   ; Stuck at GND due to stuck port clock_enable               ;
+; TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem~39   ; Stuck at GND due to stuck port clock_enable               ;
+; Total Number of Removed Registers = 888                       ;                                                           ;
++---------------------------------------------------------------+-----------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                           ;
++------------------------------------------------+--------------------+-------------------------------------------------+
+; Register name                                  ; Reason for Removal ; Registers Removed due to This Register          ;
++------------------------------------------------+--------------------+-------------------------------------------------+
+; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[31] ; Lost Fanouts       ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[30], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[29], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[28], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[27], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[26], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[25], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[24], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[23], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[22], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[21], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[20], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[19], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[18], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[17], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[16], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[15], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[14], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[13], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[12], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[11], ;
+;                                                ;                    ; TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[10]  ;
++------------------------------------------------+--------------------+-------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 4264  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 6     ;
+; Number of registers using Asynchronous Clear ; 8     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 4256  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_fpga|TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[2]           ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; Yes        ; |top_fpga|TOP:DUT|MIPS:MIPS|datapath:datapath|PC_int[6]           ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |top_fpga|TOP:DUT|MIPS:MIPS|datapath:datapath|ual:ALU|Mux27       ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top_fpga|TOP:DUT|MIPS:MIPS|controller:controller|ALUOp[0]        ;
+; 5:1                ; 24 bits   ; 72 LEs        ; 48 LEs               ; 24 LEs                 ; No         ; |top_fpga|TOP:DUT|MIPS:MIPS|datapath:datapath|Result[10]          ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |top_fpga|TOP:DUT|MIPS:MIPS|datapath:datapath|ual:ALU|SRCB_MUX[9] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top_fpga|TOP:DUT|MIPS:MIPS|controller:controller|AluControl[1]   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TOP:DUT|MIPS:MIPS|datapath:datapath|ual:ALU ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "TOP:DUT|MIPS:MIPS|datapath:datapath|ual:ALU"                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; zero ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "TOP:DUT"                                                                                        ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; pc[31..10]       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pc[1..0]         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; writedata[31..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; aluresult[31..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 44                          ;
+; cycloneiii_ff         ; 4264                        ;
+;     CLR               ; 2                           ;
+;     CLR SLD           ; 6                           ;
+;     ENA               ; 4256                        ;
+; cycloneiii_lcell_comb ; 3415                        ;
+;     arith             ; 46                          ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 39                          ;
+;     normal            ; 3369                        ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 19                          ;
+;         3 data inputs ; 150                         ;
+;         4 data inputs ; 3193                        ;
+;                       ;                             ;
+; Max LUT depth         ; 20.10                       ;
+; Average LUT depth     ; 11.73                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:13     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed Jul 26 14:40:44 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TOP_FPGA -c TOP_FPGA
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /ele344/laboratoires/projet2_final/fichiers_vhdl/ual.vhd
+    Info (12022): Found design unit 1: ual-rtl File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/ual.vhd Line: 23
+    Info (12023): Found entity 1: ual File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/ual.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /ele344/laboratoires/projet2_final/fichiers_vhdl/top_fpga.vhd
+    Info (12022): Found design unit 1: top_fpga-rtl File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/top_fpga.vhd Line: 28
+    Info (12023): Found entity 1: top_fpga File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/top_fpga.vhd Line: 18
+Info (12021): Found 2 design units, including 1 entities, in source file /ele344/laboratoires/projet2_final/fichiers_vhdl/top.vhd
+    Info (12022): Found design unit 1: TOP-structure_interne File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/TOP.vhd Line: 20
+    Info (12023): Found entity 1: TOP File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/TOP.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /ele344/laboratoires/projet2_final/fichiers_vhdl/regfile.vhd
+    Info (12022): Found design unit 1: RegFile-RegFile_arch File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/regfile.vhd Line: 25
+    Info (12023): Found entity 1: RegFile File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/regfile.vhd Line: 17
+Info (12021): Found 2 design units, including 1 entities, in source file /ele344/laboratoires/projet2_final/fichiers_vhdl/mips.vhd
+    Info (12022): Found design unit 1: MIPS-structure_interne File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/MIPS.vhd Line: 25
+    Info (12023): Found entity 1: MIPS File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/MIPS.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /ele344/laboratoires/projet2_final/fichiers_vhdl/imem.vhd
+    Info (12022): Found design unit 1: imem-imem_arch File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/imem.vhd Line: 20
+    Info (12023): Found entity 1: imem File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/imem.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file /ele344/laboratoires/projet2_final/fichiers_vhdl/dmem.vhd
+    Info (12022): Found design unit 1: dmem-dmem_arch File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/dmem.vhd Line: 24
+    Info (12023): Found entity 1: dmem File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/dmem.vhd Line: 17
+Info (12021): Found 2 design units, including 1 entities, in source file /ele344/laboratoires/projet2_final/fichiers_vhdl/dec7seg.vhd
+    Info (12022): Found design unit 1: dec7seg-dec7seg_archi File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/dec7seg.vhd Line: 18
+    Info (12023): Found entity 1: dec7seg File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/dec7seg.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file /ele344/laboratoires/projet2_final/fichiers_vhdl/datapath.vhd
+    Info (12022): Found design unit 1: datapath-structure_interne File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/datapath.vhd Line: 35
+    Info (12023): Found entity 1: datapath File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/datapath.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /ele344/laboratoires/projet2_final/fichiers_vhdl/controller.vhd
+    Info (12022): Found design unit 1: controller-structure_interne File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/controller.vhd Line: 27
+    Info (12023): Found entity 1: controller File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/controller.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file de10_lite_golden_top.v
+    Info (12023): Found entity 1: DE10_LITE_Golden_Top File: H:/ELE344/Laboratoires/Projet2_final/TOP_FPGA/DE10_LITE_Golden_Top.v Line: 29
+Info (12127): Elaborating entity "top_fpga" for the top level hierarchy
+Critical Warning (10920): VHDL Incomplete Partial Association warning at top_fpga.vhd(34): port or argument "PC" has 24/32 unassociated elements File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/top_fpga.vhd Line: 34
+Info (12128): Elaborating entity "TOP" for hierarchy "TOP:DUT" File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/top_fpga.vhd Line: 34
+Info (12129): Elaborating entity "imem" using architecture "A:imem_arch" for hierarchy "TOP:DUT|imem:imem" File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/TOP.vhd Line: 40
+Info (12129): Elaborating entity "MIPS" using architecture "A:structure_interne" for hierarchy "TOP:DUT|MIPS:MIPS" File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/TOP.vhd Line: 52
+Info (12129): Elaborating entity "controller" using architecture "A:structure_interne" for hierarchy "TOP:DUT|MIPS:MIPS|controller:controller" File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/MIPS.vhd Line: 42
+Info (12129): Elaborating entity "datapath" using architecture "A:structure_interne" for hierarchy "TOP:DUT|MIPS:MIPS|datapath:datapath" File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/MIPS.vhd Line: 66
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(46): object "sortie_zero" assigned a value but never read File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/datapath.vhd Line: 46
+Info (12129): Elaborating entity "RegFile" using architecture "A:regfile_arch" for hierarchy "TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre" File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/datapath.vhd Line: 63
+Info (12129): Elaborating entity "ual" using architecture "A:rtl" for hierarchy "TOP:DUT|MIPS:MIPS|datapath:datapath|ual:ALU" File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/datapath.vhd Line: 80
+Info (12129): Elaborating entity "dmem" using architecture "A:dmem_arch" for hierarchy "TOP:DUT|dmem:dmem" File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/TOP.vhd Line: 74
+Info (12128): Elaborating entity "dec7seg" for hierarchy "dec7seg:dec7seg_0" File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/top_fpga.vhd Line: 42
+Info (276014): Found 2 instances of uninferred RAM logic
+    Info (276007): RAM logic "TOP:DUT|MIPS:MIPS|datapath:datapath|RegFile:registre|mem" is uninferred due to asynchronous read logic File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/regfile.vhd Line: 27
+    Info (276007): RAM logic "TOP:DUT|dmem:dmem|mem" is uninferred due to asynchronous read logic File: H:/ELE344/Laboratoires/Projet2_final/Fichiers_VHDL/dmem.vhd Line: 29
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 790 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 7709 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 7665 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4872 megabytes
+    Info: Processing ended: Wed Jul 26 14:41:35 2023
+    Info: Elapsed time: 00:00:51
+    Info: Total CPU time (on all processors): 00:00:40
+
+

@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Wed Jul 26 14:41:34 2023
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : TOP_FPGA
+Top-level Entity Name : top_fpga
+Family : MAX 10
+Total logic elements : 7,601
+    Total combinational functions : 3,409
+    Dedicated logic registers : 4,264
+Total registers : 4264
+Total pins : 44
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0
